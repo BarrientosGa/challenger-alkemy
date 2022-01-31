@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+  padding: 0;
+  margin: 0 ;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* COMPONENTE LOGIN */
+
+
+/* COMPONENTE LOGIN */
+
+/* COMPONENTE HEADER */
+
+.header{
+  min-height: 15vh;
+  text-align: center;
+  padding: 20px;
 }
+/* COMPONENTE HEADER */
+
+/* COMPONENTE INPUT SEARCH */
+
+.container-search{
+  
+  /* max-width: 50%; */
+  
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
+.form-search{
+  
+  
+}
+
+.input-search{
+  width: 80%;
+  border-style: none;
+  padding: 5px;
+  background-color: inherit;
+  border-bottom: 1px solid black;
+}
+
+/* COMPONENTE INPUT SEARCH */
+
