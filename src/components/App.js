@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../components/login/Login";
-import PrivateRoute from "./PrivateRouter"
+import PrivateRoute from "./privateRouter/PrivateRouter";
 import ItemListContainer from "./home/ItemListContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux"

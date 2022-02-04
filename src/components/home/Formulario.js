@@ -35,8 +35,10 @@ const Formulario = () => {
                             name="search"
                             placeholder="Buscar"
                         />
-                        <button type='submit'>Buscar</button>
-                        <ErrorMessage name="search" component={() => (<p>{errors.search}</p>)} />
+                        <button className='btn btn-success m-2' type='submit'><span className="material-icons p-1">
+                            search
+                        </span></button>
+                        <ErrorMessage name="search" component={() => (<p className="error">{errors.search}</p>)} />
                     </Form>
                 )}
             </Formik>

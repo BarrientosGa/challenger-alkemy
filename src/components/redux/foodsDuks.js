@@ -20,10 +20,9 @@ const initialState = {
     }
 //actions
 export const obtenerPlatos = (plato) => async (dispatch,getState) => {
-    const key= "b04e587cd2b047ab987b310e7efe9da0";
-    const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}`;
+    const baseURL = `${process.env.REACT_APP_API_URL}`;
     try{
-        const response = await axios.get(url + `&query=${plato}`);
+        const response = await axios.get(baseURL + `&query=${plato}`);
         dispatch({
             type: "OBTENER_PLATOS",
             payload: response.data.results

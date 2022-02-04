@@ -1,7 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useEffect } from "react";
 import getDate from "../../helpers/getDate"
 import "../login/style.css"
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            navigate("/");
+        };
+    }, [navigate]);
     return (
         <div className="container-login">
             <Formik
@@ -24,6 +33,7 @@ const Login = () => {
                 }}
                 onSubmit={(valores, { resetForm }) => {
                     getDate(valores)
+                    resetForm();
                 }}
             >
                 {({ errors }) => (

@@ -8,11 +8,17 @@ const Item = ({ item }) => {
     }
 
     return (
-        <div className="col-sm m-2">
-            <img src={item.image} alt={item.title} className='img-fluid' />
-            <h1>{item.tittle}</h1>
-            <Link to={`/item/${item.id}`}><button>Ver detalles</button> </Link>
-            <button id={item.id} onClick={borrar}>Eliminar plato</button>
+        <div className="col-xxl-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-xl-flex d-lg-flex d-md-flex d-sm-flex justify-content-center">
+            <div className="card mt-3" style={{ width: 18 + "rem" }}>
+                <img src={item.image} className="card-img-top" alt={item.title} />
+                <div className="card-body text-center">
+                    <h5 className="card-title p-2 fs-5">{item.title}</h5>
+                </div>
+                <div className="card-footer text-center">
+                    <Link to={`/item/${item.id}`}><button className='btn btn-primary'>Ver detalles</button> </Link>
+                    <button id={item.id} onClick={borrar} className='btn btn-danger'>Eliminar plato</button>
+                </div>
+            </div>
         </div>
     )
 }

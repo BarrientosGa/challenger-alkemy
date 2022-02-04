@@ -1,8 +1,10 @@
 import React from 'react';
-import Header from '../Header';
+import Header from '../header/Header';
 import { useSelector, useDispatch } from 'react-redux';
 import { agregarPlato } from '../redux/platosAgregadosDuks';
 import { Link } from 'react-router-dom';
+import Spinner from '../spinner/Spinner';
+import ItemBuscados from './ItemBuscados';
 const ItemSearchContainer = () => {
     const dispatch = useDispatch();
     const platos = useSelector(state => state.foods.platos);
@@ -13,26 +15,21 @@ const ItemSearchContainer = () => {
     return (
         <>
             <Header />
-            <div className='container'>
-                <div className="row">
-                    {platos.map(({ id, title, image }) => (
-                        <div key={id} className="col-sm m-2 p-2">
-                            <div className="card" style={{width: 18 + "rem"}}>
-                                <img src={image} className="card-img-top" alt={title} />
-                                <div className="card-body text-center">
-                                    <h5 className="card-title">{title}</h5>
-                                    <button id={id} onClick={add} className='btn btn-secondary'>Agregar plato</button>
-                                </div>
-                            </div>
+
+            {platos.length === 0 ? <Spinner /> :
+                <div className='container'>
+                    <div className="row">
+                        {platos.map(plato => {
+                            return <ItemBuscados key={plato.id} plato={plato} add={add} />
+                        })}
+                    </div>
+                    <div className="row">
+                        <div className="d-flex justify-content-center col-sm m-4">
+                            <Link to="/"><button className='btn btn-info'>Volver al inicio</button></Link>
                         </div>
-                    ))}
-                </div>
-                <div className="row">
-                    <div className="d-flex justify-content-center col-sm m-4">
-                        <Link to="/"><button>volver al inicio</button></Link>
                     </div>
                 </div>
-            </div>
+            }
         </>
     )
 }

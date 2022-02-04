@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.parrafo {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.input-search {
+    width: 80%;
+    border-style: none;
+    padding: 5px;
+    background-color: inherit;
+    border-bottom: 1px solid black;
+}

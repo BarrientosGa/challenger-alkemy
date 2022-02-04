@@ -1,10 +1,27 @@
-const DatosDelMenu = ({ precio, tiempoDePreparacion, indiceAlimenticio }) => {
+import { useEffect, useState } from 'react';
+import calcularPrecioTotalDelMenu from '../../helpers/calcularPrecioTotalDelMenu';
+import calcularPromedioDePreparacion from '../../helpers/calcularPromedioDePreparacion';
+import calcularPromedioSalud from '../../helpers/calcularPromedioSalud';
+const DatosDelMenu = ({ platos }) => {
+    const [precioDePlatos, setPrecioDePlatos] = useState(0);
+    const [tiempoDePrep, setTiempoDePreparacion] = useState(0);
+    const [puntajeSalud, setPuntajeSalud] = useState(0);
+    useEffect(() => {
+        setPrecioDePlatos(calcularPrecioTotalDelMenu(platos));
+        setTiempoDePreparacion(calcularPromedioDePreparacion(platos));
+        setPuntajeSalud(calcularPromedioSalud(platos));
+    }, [platos]);
+
     return (
         <div className="d-flex justify-content-center col-sm">
-            <h1>Datos del menu</h1>
-            <p>Precio total del menu: ${precio}</p>
-            <p>Promedio total de preparacion de todos los platos: {tiempoDePreparacion}</p>
-            <p>Indice alimenticio total: {indiceAlimenticio}</p>
+            < div className="card m-3" style={{ width: 19 + "rem" }}>
+                <div className="card-body">
+                    <h5 className="card-title text-center">Datos del menu</h5>
+                    <p><b>Precio total de los platos:</b> <span className="text-warning p-precio fw-bold">${precioDePlatos}</span></p>
+                    <p><b>Promedio total de preparacion de todos los platos:</b><span className="text-warning p-precio fw-bold"> {tiempoDePrep}</span></p>
+                    <p><b>Puntaje saludable:</b><span className="text-warning p-precio fw-bold"> {puntajeSalud}</span></p>
+                </div>
+            </div>
         </div>
     )
 }
