@@ -17,8 +17,8 @@ const DatosDelMenu = ({ platos }) => {
             < div className="card m-3" style={{ width: 19 + "rem" }}>
                 <div className="card-body">
                     <h5 className="card-title text-center">Datos del menu</h5>
-                    <p><b>Precio total de los platos:</b> <span className="text-warning p-precio fw-bold">${precioDePlatos}</span></p>
-                    <p><b>Promedio total de preparacion de todos los platos:</b><span className="text-warning p-precio fw-bold"> {tiempoDePrep}</span></p>
+                    <p><b>Precio:</b> <span className="text-warning p-precio fw-bold">${precioDePlatos}</span></p>
+                    <p><b>Promedio de preparación:</b><span className="text-warning p-precio fw-bold"> {tiempoDePrep}</span></p>
                     <p><b>Puntaje saludable:</b><span className="text-warning p-precio fw-bold"> {puntajeSalud}</span></p>
                 </div>
             </div>
